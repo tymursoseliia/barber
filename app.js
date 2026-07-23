@@ -1,9 +1,9 @@
 /* ==========================================================================
-   STATUS MEMBER'S CLUB - INTERACTIVE CONTROLLER
+   STATUS MEMBER'S CLUB - PERFECTED CONTROLLER
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header scroll effect
+  // 1. Header scroll background effect
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -13,7 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Service Matrix Filter Pills
+  // 2. Mobile Navigation Hamburger Toggle
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = id = document.getElementById('navLinks');
+
+  if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close menu when clicking link
+    document.querySelectorAll('.nav-item-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+      });
+    });
+  }
+
+  // 3. Service Matrix Filter Pills
   const filterPills = document.querySelectorAll('.tab-pill');
   const matrixRows = document.querySelectorAll('.matrix-table tr[data-category]');
 
@@ -33,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Certificate Value Selector Chips
+  // 4. Certificate Value Selector Chips
   const certChips = document.querySelectorAll('.chip-btn');
   const certDisplayPrice = document.getElementById('certDisplayPrice');
 
@@ -48,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Modal Booking Drawer Controller
+  // 5. Modal Booking Drawer Controller
   const modalOverlay = document.getElementById('bookingModal');
   const openModalBtns = document.querySelectorAll('.js-open-booking');
   const closeModalBtn = document.getElementById('closeModalBtn');
