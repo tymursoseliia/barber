@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STATUS Barber Club — Преміальний Барбершоп у Києві</title>
+  <meta name="description" content="STATUS Barber Club — чоловічий барбершоп преміум-класу у Києві. Чоловічі стрижки, борода, камуфлювання сивини, класичне гоління. Запис онлайн." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="logo-text">STATUS</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#services" class="nav-link">Про нас</a></li>
+          <li><a href="#prices" class="nav-link">Ціни</a></li>
+          <li><a href="#barbers" class="nav-link">Барбери</a></li>
+          <li><a href="#certificates" class="nav-link">Сертифікати</a></li>
+          <li><a href="#contacts" class="nav-link">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+380979003103" class="phone-link">
+          <span>+38 (097) 900-31-03</span>
+        </a>
+        <a href="#" class="btn btn-primary js-open-booking">Записатись</a>
+        <button class="mobile-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-subtitle">STATUS BARBER CLUB • КИЇВ</div>
+      <h1 class="hero-title">
+        Більше ніж стрижка.<br>
+        <span class="text-gold">Твій ідеальний STATUS</span>
+      </h1>
+      <p class="hero-desc">
+        Територія чоловічої естетики, де стиль зустрічається з характером. Бездоганна якість, джазова атмосфера та першокласний догляд.
+      </p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary js-open-booking">Обрати зручний час</a>
+        <a href="#prices" class="btn btn-outline">Переглянути ціни</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <div class="ticker-item">STATUS BARBER CLUB <span class="icon">✦</span></div>
+      <div class="ticker-item">НЕ ПЕРУКАРНЯ, А ТЕРИТОРІЯ ЧОЛОВІКІВ <span class="icon">✦</span></div>
+      <div class="ticker-item">БЕЗДОГАННИЙ СТИЛЬ ТА ДОГЛЯД <span class="icon">✦</span></div>
+      <div class="ticker-item">ПРЕМІАЛЬНІ МАТЕРІАЛИ <span class="icon">✦</span></div>
+      <div class="ticker-item">КИЇВ • ВУЛ. ВЕЛИКА ВАСИЛЬКІВСЬКА 24 <span class="icon">✦</span></div>
+      
+      <!-- Duplicate for infinite loop -->
+      <div class="ticker-item">STATUS BARBER CLUB <span class="icon">✦</span></div>
+      <div class="ticker-item">НЕ ПЕРУКАРНЯ, А ТЕРИТОРІЯ ЧОЛОВІКІВ <span class="icon">✦</span></div>
+      <div class="ticker-item">БЕЗДОГАННИЙ СТИЛЬ ТА ДОГЛЯД <span class="icon">✦</span></div>
+      <div class="ticker-item">ПРЕМІАЛЬНІ МАТЕРІАЛИ <span class="icon">✦</span></div>
+      <div class="ticker-item">КИЇВ • ВУЛ. ВЕЛИКА ВАСИЛЬКІВСЬКА 24 <span class="icon">✦</span></div>
+    </div>
+  </div>
+
+  <!-- About & Statistics Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Філософія STATUS</span>
+        <h2 class="section-title">Чому обирають саме нас</h2>
+        <p class="section-desc">Ми створили простір, куди ви приходите не просто за зачіскою, а за відчуттям впевненості та відпочинком від суєти.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">5000+</div>
+          <div class="stat-label">Задоволених клієнтів, які повертаються щомісяця</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-num">6 Років</div>
+          <div class="stat-label">Досвіду створення неповторного чоловічого стилю</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-num">4.9 ★</div>
+          <div class="stat-label">Середня оцінка на основі понад 800 відгуків у Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prices Section -->
+  <section class="section" id="prices" style="background: rgba(13, 15, 19, 0.6);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Прайс-лист</span>
+        <h2 class="section-title">Послуги та ціни</h2>
+        <p class="section-desc">Всі ціни вказані в гривнях (₴) в залежності від рівня обраного майстра.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="price-tabs">
+        <button class="tab-btn active" data-tab="all">Всі послуги</button>
+        <button class="tab-btn" data-tab="haircuts">Стрижки</button>
+        <button class="tab-btn" data-tab="beard">Борода</button>
+        <button class="tab-btn" data-tab="combo">Комплекси</button>
+        <button class="tab-btn" data-tab="care">Догляд</button>
+      </div>
+
+      <!-- Price Table Matrix -->
+      <div class="price-table-wrapper">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Послуга</th>
+              <th style="text-align:center;">Барбер</th>
+              <th style="text-align:center;">Топ-Барбер</th>
+              <th style="text-align:center;">Бренд-Барбер</th>
+              <th style="text-align:center;">Шеф-Барбер</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-category="haircuts">
+              <td>
+                <div class="service-name">
+                  <span>Стрижка чоловіча</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">800 ₴</td>
+              <td style="text-align:center;" class="price-val">900 ₴</td>
+              <td style="text-align:center;" class="price-val">1000 ₴</td>
+              <td style="text-align:center;" class="price-val">1100 ₴</td>
+            </tr>
+
+            <tr data-category="combo" style="background: rgba(212, 175, 55, 0.04);">
+              <td>
+                <div class="service-name">
+                  <span>Стрижка + Моделювання Бороди</span>
+                  <span class="service-badge">ХІТ</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">1100 ₴</td>
+              <td style="text-align:center;" class="price-val">1250 ₴</td>
+              <td style="text-align:center;" class="price-val">1400 ₴</td>
+              <td style="text-align:center;" class="price-val">1500 ₴</td>
+            </tr>
+
+            <tr data-category="beard">
+              <td>
+                <div class="service-name">
+                  <span>Стрижка та оформлення бороди</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">550 ₴</td>
+              <td style="text-align:center;" class="price-val">650 ₴</td>
+              <td style="text-align:center;" class="price-val">750 ₴</td>
+              <td style="text-align:center;" class="price-val">800 ₴</td>
+            </tr>
+
+            <tr data-category="haircuts">
+              <td>
+                <div class="service-name">
+                  <span>Стрижка під насадку / Фаде</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">600 ₴</td>
+              <td style="text-align:center;" class="price-val">700 ₴</td>
+              <td style="text-align:center;" class="price-val">800 ₴</td>
+              <td style="text-align:center;" class="price-val">850 ₴</td>
+            </tr>
+
+            <tr data-category="care">
+              <td>
+                <div class="service-name">
+                  <span>Камуфлювання сивини голови або бороди</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">700 ₴</td>
+              <td style="text-align:center;" class="price-val">800 ₴</td>
+              <td style="text-align:center;" class="price-val">850 ₴</td>
+              <td style="text-align:center;" class="price-val">900 ₴</td>
+            </tr>
+
+            <tr data-category="combo">
+              <td>
+                <div class="service-name">
+                  <span>Батько + Син (до 12 років)</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">1400 ₴</td>
+              <td style="text-align:center;" class="price-val">1550 ₴</td>
+              <td style="text-align:center;" class="price-val">1700 ₴</td>
+              <td style="text-align:center;" class="price-val">1850 ₴</td>
+            </tr>
+
+            <tr data-category="care">
+              <td>
+                <div class="service-name">
+                  <span>Преміальний догляд Black Mask & SPA</span>
+                </div>
+              </td>
+              <td style="text-align:center;" class="price-val">500 ₴</td>
+              <td style="text-align:center;" class="price-val">500 ₴</td>
+              <td style="text-align:center;" class="price-val">600 ₴</td>
+              <td style="text-align:center;" class="price-val">600 ₴</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div style="text-align:center; margin-top:2.5rem;">
+        <a href="#" class="btn btn-primary js-open-booking">Записатися на послугу</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barber Masters Section -->
+  <section class="section" id="barbers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Наша команда</span>
+        <h2 class="section-title">Майстри барбершопу STATUS</h2>
+        <p class="section-desc">Топові фахівці, які довели свій професіоналізм сотнями бездоганних стрижок.</p>
+      </div>
+
+      <div class="barbers-grid">
+        <div class="barber-card">
+          <div class="barber-img-box">
+            <img src="images/master1.png" alt="Олександр Громов" class="barber-img" onerror="this.src='https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80'" />
+            <span class="barber-level">Шеф-Барбер</span>
+          </div>
+          <div class="barber-info">
+            <h3 class="barber-name">Олександр Громов</h3>
+            <p class="barber-exp">Досвід 8 років • Спеціаліст з авторських стрижок та моделювання бороди</p>
+            <a href="#" class="btn btn-outline js-open-booking" data-barber="Олександр Громов" style="width:100%;">Записатися до майстра</a>
+          </div>
+        </div>
+
+        <div class="barber-card">
+          <div class="barber-img-box">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Максим Коваль" class="barber-img" />
+            <span class="barber-level">Бренд-Барбер</span>
+          </div>
+          <div class="barber-info">
+            <h3 class="barber-name">Максим Коваль</h3>
+            <p class="barber-exp">Досвід 6 років • Експерт з класичного гоління та висвітлення текстури</p>
+            <a href="#" class="btn btn-outline js-open-booking" data-barber="Максим Коваль" style="width:100%;">Записатися до майстра</a>
+          </div>
+        </div>
+
+        <div class="barber-card">
+          <div class="barber-img-box">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Артем Мельник" class="barber-img" />
+            <span class="barber-level">Топ-Барбер</span>
+          </div>
+          <div class="barber-info">
+            <h3 class="barber-name">Артем Мельник</h3>
+            <p class="barber-exp">Досвід 5 років • Майстер чітких градієнтів (Fade) та дитячих стрижок</p>
+            <a href="#" class="btn btn-outline js-open-booking" data-barber="Артем Мельник" style="width:100%;">Записатися до майстра</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Certificate Section (Matching M15/Barbaron concept) -->
+  <section class="section cert-section" id="certificates">
+    <div class="container">
+      <div class="cert-card-grid">
+        <div class="cert-card-preview gold-border-glow">
+          <img src="images/certificate.png" alt="Подарунковий Сертифікат STATUS" class="cert-img" onerror="this.src='https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80'" />
+        </div>
+
+        <div class="cert-content">
+          <span class="section-tag">Ідеальний Подарунок</span>
+          <h3>ПОДАРУНКОВИЙ СЕРТИФІКАТ У БАРБЕРШОП STATUS</h3>
+          <p>
+            Зручний та стильними подарунок для чоловіків, які цінують якісний догляд. 
+            Сертифікат номіналом від <strong>1000 грн</strong> можна використати на чоловічі стрижки, 
+            стрижку бороди, доглядові процедури або на преміальну чоловічу косметику.
+          </p>
+
+          <div class="cert-nominals">
+            <div class="nominal-chip active" data-value="1000">1000 ₴</div>
+            <div class="nominal-chip" data-value="2000">2000 ₴</div>
+            <div class="nominal-chip" data-value="3000">3000 ₴</div>
+            <div class="nominal-chip" data-value="5000">5000 ₴</div>
+          </div>
+
+          <div>
+            <a href="#" class="btn btn-primary js-open-booking" data-service="Подарунковий Сертифікат">
+              Придбати сертифікат (<span id="certPriceDisplay">1000 ₴</span>)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts & Map Section -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Локація</span>
+        <h2 class="section-title">Чекаємо вас у STATUS</h2>
+        <p class="section-desc">Зручне розташування в центрі Києва з власним паркінгом для гостей.</p>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contact-info-list">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h4>Адреса барбершопу</h4>
+              <p>м. Київ, вул. Велика Васильківська, 24 (м. Лва Толстого)</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail">
+              <h4>Телефон для запису</h4>
+              <a href="tel:+380979003103">+38 (097) 900-31-03</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-detail">
+              <h4>Графік роботи</h4>
+              <p>Щодня з 10:00 до 21:00 (без перерв та вихідних)</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-detail">
+              <h4>Месенджери та Соцмережі</h4>
+              <p>Instagram: @status.barbershop • Telegram: @status_kyiv</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            class="map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.825828551468!2d30.514309876878906!3d50.44061808779913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef30e132ad7%3A0x6b3b55502c388658!2z0LLRg9C7LiDQktC10LvQuNC60LAg0JLQsNGB0LjQu9GM0LrRltCy0YHRjNC60LAsIDI0LCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1700000000000!5m2!1suk!2sua" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <a href="#" class="logo footer-logo">
+        <div class="logo-icon">S</div>
+        <span class="logo-text">STATUS</span>
+      </a>
+
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">IG</a>
+        <a href="#" class="social-link" aria-label="Telegram">TG</a>
+        <a href="#" class="social-link" aria-label="Facebook">FB</a>
+      </div>
+
+      <p>© 2026 STATUS BARBER CLUB. Всі права захищено. Створено для тих, хто обирає найкраще.</p>
+    </div>
+  </footer>
+
+  <!-- STICKY FLOATING ACTION BUTTON ("ОНЛАЙН ЗАПИС") -->
+  <button class="floating-booking-btn js-open-booking" aria-label="Онлайн запись">
+    <div class="floating-icon-wrap">✂</div>
+    <span class="btn-text">Онлайн запись</span>
+  </button>
+
+  <!-- MODAL BOOKING DIALOG -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-container">
+      <button class="modal-close" id="closeModalBtn">&times;</button>
+      
+      <div class="modal-header">
+        <div class="logo-icon" style="margin: 0 auto 0.8rem;">S</div>
+        <h3 class="modal-title">Онлайн Запис в STATUS</h3>
+        <p style="color:var(--text-muted); font-size:0.85rem;">Оберіть зручні параметри візиту за 1 хвилину</p>
+      </div>
+
+      <!-- Step Tracker -->
+      <div class="step-tracker">
+        <div class="step-node active">1</div>
+        <div class="step-node">2</div>
+      </div>
+
+      <!-- Modal Booking Form -->
+      <form id="bookingForm">
+        <!-- Step 1: Select Service & Barber -->
+        <div id="bookingStep1">
+          <div class="form-group">
+            <label class="form-label">Оберіть послугу</label>
+            <select class="form-select" id="modalServiceSelect">
+              <option value="Стрижка чоловіча">Стрижка чоловіча (від 800 ₴)</option>
+              <option value="Стрижка + Моделювання Бороди">Стрижка + Моделювання Бороди (від 1100 ₴)</option>
+              <option value="Стрижка та оформлення бороди">Стрижка та оформлення бороди (від 550 ₴)</option>
+              <option value="Стрижка під насадку / Фаде">Стрижка під насадку / Фаде (від 600 ₴)</option>
+              <option value="Камуфлювання сивини">Камуфлювання сивини (від 700 ₴)</option>
+              <option value="Подарунковий Сертифікат">Подарунковий Сертифікат (від 1000 ₴)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Оберіть майстра</label>
+            <select class="form-select" id="modalBarberSelect">
+              <option value="Будь-який вільний барбер">Будь-який вільний майстер</option>
+              <option value="Олександр Громов">Олександр Громов (Шеф-Барбер)</option>
+              <option value="Максим Коваль">Максим Коваль (Бренд-Барбер)</option>
+              <option value="Артем Мельник">Артем Мельник (Топ-Барбер)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step 2: Date, Time & Contact -->
+        <div id="bookingStep2" style="display:none;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Бажана дата</label>
+              <input type="date" class="form-control" id="bookingDate" required value="2026-07-24">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Зручний час</label>
+              <select class="form-select" id="bookingTime">
+                <option>10:00</option>
+                <option>11:30</option>
+                <option>13:00</option>
+                <option>14:30</option>
+                <option>16:00</option>
+                <option>17:30</option>
+                <option>19:00</option>
+                <option>20:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ваше Ім'я</label>
+            <input type="text" class="form-control" id="clientName" placeholder="Введіть ваше ім'я" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Номер телефону</label>
+            <input type="tel" class="form-control" id="clientPhone" placeholder="+380 (__) ___-__-__" required>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2rem;">
+          <button type="button" class="btn btn-outline" id="prevStepBtn" style="display:none;">← Назад</button>
+          <button type="button" class="btn btn-primary" id="nextStepBtn" style="margin-left:auto;">Далі →</button>
+          <button type="submit" class="btn btn-primary" id="submitBookingBtn" style="display:none; margin-left:auto;">Підтвердити Запис</button>
+        </div>
+      </form>
+
+      <!-- Success Notification Box -->
+      <div id="modalSuccessMsg" style="display:none; text-align:center; padding: 2rem 0;">
+        <div style="font-size:3rem; color:var(--gold-primary); margin-bottom:1rem;">✓</div>
+        <h4 style="font-family:var(--font-display); font-size:1.6rem; color:var(--gold-light); margin-bottom:0.5rem;">Дякуємо! Запис прийнято</h4>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.5rem;">Адміністратор STATUS підтвердить ваш візит дзвінком або повідомленням у Telegram протягом 5 хвилин.</p>
+        <button class="btn btn-outline" onclick="document.getElementById('bookingModal').classList.remove('active')">Закрити</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
