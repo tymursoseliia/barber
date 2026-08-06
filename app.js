@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const phoneBadges = document.querySelectorAll('.phone-badge');
   phoneBadges.forEach(badge => {
     badge.addEventListener('click', () => {
-      showToast('📞 Набір номера: +38 (097) 900-31-03 (STATUS)');
+      showToast('📞 Набір номера: +38 (073) 333-11-00 (STATUS)');
     });
   });
 
