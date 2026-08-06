@@ -1,9 +1,28 @@
 /* ==========================================================================
-   STATUS MEMBER'S CLUB - PERFECTED CONTROLLER
+   STATUS MEMBER'S CLUB - CONTROLLER & LINK INTEGRATION
    ========================================================================== */
 
+const ALTEGIO_CRM_URL = 'https://status.altegio.me/company/1367028/personal/menu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&o=';
+const TELEGRAM_BOT_URL = 'https://t.me/STATUSua_bot';
+
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header scroll background effect
+  // 1. Toast Notification Helper
+  const toastContainer = document.getElementById('toastNotification');
+  const toastMessage = toastContainer ? toastContainer.querySelector('.toast-message') : null;
+  let toastTimer = null;
+
+  function showToast(msg) {
+    if (!toastContainer || !toastMessage) return;
+    toastMessage.textContent = msg;
+    toastContainer.classList.add('show');
+    
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toastContainer.classList.remove('show');
+    }, 3500);
+  }
+
+  // 2. Header Scroll Effect
   const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -13,16 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Mobile Navigation Hamburger Toggle
+  // 3. Mobile Navigation Hamburger Toggle
   const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navLinks = id = document.getElementById('navLinks');
+  const navLinks = document.getElementById('navLinks');
 
   if (hamburgerBtn && navLinks) {
     hamburgerBtn.addEventListener('click', () => {
       navLinks.classList.toggle('mobile-open');
     });
 
-    // Close menu when clicking link
     document.querySelectorAll('.nav-item-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('mobile-open');
@@ -30,7 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Service Matrix Filter Pills
+  // 4. Phone Badge Interaction
+  const phoneBadges = document.querySelectorAll('.phone-badge');
+  phoneBadges.forEach(badge => {
+    badge.addEventListener('click', () => {
+      showToast('📞 Набір номера: +38 (097) 900-31-03 (STATUS)');
+    });
+  });
+
+  // 5. Service Matrix Filter Pills
   const filterPills = document.querySelectorAll('.tab-pill');
   const matrixRows = document.querySelectorAll('.matrix-table tr[data-category]');
 
@@ -50,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Certificate Value Selector Chips
+  // 6. Certificate Value Selector Chips
   const certChips = document.querySelectorAll('.chip-btn');
   const certDisplayPrice = document.getElementById('certDisplayPrice');
 
@@ -65,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Modal Booking Drawer Controller
+  // 7. Modal Booking Drawer Controller
   const modalOverlay = document.getElementById('bookingModal');
   const openModalBtns = document.querySelectorAll('.js-open-booking');
   const closeModalBtn = document.getElementById('closeModalBtn');
@@ -75,18 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetBarber = btn.getAttribute('data-barber');
-      const targetService = btn.getAttribute('data-service');
-
-      if (targetBarber) {
-        const barberSelect = document.getElementById('modalBarberSelect');
-        if (barberSelect) barberSelect.value = targetBarber;
-      }
-      if (targetService) {
-        const serviceSelect = document.getElementById('modalServiceSelect');
-        if (serviceSelect) serviceSelect.value = targetService;
-      }
-
       if (bookingForm) bookingForm.style.display = 'block';
       if (modalSuccessMsg) modalSuccessMsg.style.display = 'none';
       
@@ -96,17 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function closeModal() {
-    modalOverlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    if (modalOverlay) {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
   }
 
   if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) closeModal();
-  });
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
       closeModal();
     }
   });
@@ -118,12 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = document.getElementById('clientPhone').value;
 
       if (!name || !phone) {
-        alert('Будь ласка, введіть ім\'я та номер телефону');
+        showToast('⚠️ Будь ласка, введіть ім\'я та номер телефону');
         return;
       }
 
       bookingForm.style.display = 'none';
-      modalSuccessMsg.style.display = 'block';
+      if (modalSuccessMsg) modalSuccessMsg.style.display = 'block';
+      showToast('🎉 Запит отримано! Адміністратор зателефонує вам.');
     });
   }
+
+  // 8. Link Click Toast Feedback
+  document.querySelectorAll('a[href*="altegio.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      showToast('⚡ Перехід до CRM-системи онлайн-запису Altegio...');
+    });
+  });
+
+  document.querySelectorAll('a[href*="t.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      showToast('🤖 Перехід до Telegram Bot STATUS (@STATUSua_bot)...');
+    });
+  });
 });
