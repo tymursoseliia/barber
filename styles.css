@@ -693,6 +693,9 @@ body {
   overflow-x: auto;
   box-shadow: 0 20px 50px rgba(0,0,0,0.6);
   position: relative;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 220px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll-hint-bar {
@@ -753,6 +756,17 @@ body {
   background: #1A1A1A;
   box-shadow: 6px 0 16px rgba(0, 0, 0, 0.55);
   border-right: 1px solid var(--border-gold);
+  width: 220px;
+  min-width: 200px;
+  max-width: 240px;
+}
+
+/* Scroll Snap Columns Alignment & Lock */
+.matrix-table th:nth-child(n+2),
+.matrix-table td:nth-child(n+2) {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-width: 140px;
 }
 
 .matrix-table th:first-child {
