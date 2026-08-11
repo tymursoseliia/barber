@@ -697,15 +697,38 @@ body {
 
 .scroll-hint-bar {
   display: none;
-  background: rgba(212, 194, 172, 0.1);
+  background: rgba(212, 194, 172, 0.12);
   color: var(--gold-primary);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.76rem;
+  font-weight: 800;
   text-align: center;
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--border-gold);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  transition: opacity 0.4s ease;
+}
+
+.hint-hand-left {
+  display: inline-block;
+  margin-right: 0.35rem;
+  animation: bounceLeft 1.4s infinite ease-in-out;
+}
+
+.hint-hand-right {
+  display: inline-block;
+  margin-left: 0.35rem;
+  animation: bounceRight 1.4s infinite ease-in-out;
+}
+
+@keyframes bounceLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-6px); }
+}
+
+@keyframes bounceRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
 }
 
 .matrix-table {

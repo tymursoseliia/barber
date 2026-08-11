@@ -197,4 +197,39 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('🤖 Перехід до Telegram Bot STATUS (@STATUSua_bot)...');
     });
   });
+
+  // 9. Table Horizontal Scroll Peek Animation Hint for Mobile/Tablet
+  const priceMatrix = document.querySelector('.price-card-matrix');
+  const scrollHintBar = document.getElementById('scrollHintBar');
+  let hasPeeked = false;
+
+  if (priceMatrix) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasPeeked) {
+          hasPeeked = true;
+          
+          // Only trigger horizontal peek if table is scrollable
+          if (priceMatrix.scrollWidth > priceMatrix.clientWidth) {
+            setTimeout(() => {
+              priceMatrix.scrollTo({ left: 90, behavior: 'smooth' });
+              setTimeout(() => {
+                priceMatrix.scrollTo({ left: 0, behavior: 'smooth' });
+              }, 700);
+            }, 400);
+          }
+        }
+      });
+    }, { threshold: 0.25 });
+
+    observer.observe(priceMatrix);
+
+    priceMatrix.addEventListener('scroll', () => {
+      if (priceMatrix.scrollLeft > 20 && scrollHintBar) {
+        scrollHintBar.style.opacity = '0.35';
+      } else if (scrollHintBar) {
+        scrollHintBar.style.opacity = '1';
+      }
+    });
+  }
 });
