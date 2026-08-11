@@ -431,15 +431,23 @@
           </p>
 
           <div class="cert-chips-list">
-            <div class="chip-btn active" data-val="1000">1000 ₴</div>
-            <div class="chip-btn" data-val="2500">2500 ₴</div>
-            <div class="chip-btn" data-val="5000">5000 ₴</div>
-            <div class="chip-btn" data-val="10000">10000 ₴</div>
+            <button type="button" class="chip-btn active" data-val="1000">1000 ₴</button>
+            <button type="button" class="chip-btn" data-val="2000">2000 ₴</button>
+            <button type="button" class="chip-btn" data-val="5000">5000 ₴</button>
+            <button type="button" class="chip-btn chip-custom-btn" data-val="custom">Довільна сума</button>
+          </div>
+
+          <div class="custom-amount-wrapper" id="customAmountWrapper" style="display: none;">
+            <label for="customCertInput" class="custom-amount-label">Сума сертифіката (від 1000 ₴):</label>
+            <div class="custom-input-inner">
+              <input type="number" id="customCertInput" class="custom-cert-input" min="1000" step="100" placeholder="1000" value="1000" />
+              <span class="currency-symbol">₴</span>
+            </div>
           </div>
 
           <div class="cert-action-box">
             <a href="https://status.altegio.me/company/1367028/personal/menu?utm_source=ig&utm_medium=social&utm_content=link_in_bio&o=" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
-              Замовити Сертифікат (<span id="certDisplayPrice">1000 ₴</span>)
+              Замовити Сертифікат ( <span id="certDisplayPrice">1000 ₴</span> )
             </a>
           </div>
         </div>

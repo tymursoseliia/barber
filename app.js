@@ -76,20 +76,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. Certificate Value Selector Chips
+  // 6. Certificate Value Selector Chips & Custom Amount Controller
   const certChips = document.querySelectorAll('.chip-btn');
   const certDisplayPrice = document.getElementById('certDisplayPrice');
+  const customAmountWrapper = document.getElementById('customAmountWrapper');
+  const customCertInput = document.getElementById('customCertInput');
+
+  function updateCertPriceDisplay(val) {
+    if (!certDisplayPrice) return;
+    if (val === 'custom') {
+      const numVal = customCertInput ? parseInt(customCertInput.value, 10) : 0;
+      if (numVal && numVal >= 1000) {
+        certDisplayPrice.textContent = numVal + ' ₴';
+      } else {
+        certDisplayPrice.textContent = 'від 1000 ₴';
+      }
+    } else {
+      certDisplayPrice.textContent = val + ' ₴';
+    }
+  }
 
   certChips.forEach(chip => {
     chip.addEventListener('click', () => {
       certChips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       const val = chip.getAttribute('data-val');
-      if (certDisplayPrice) {
-        certDisplayPrice.textContent = val + ' ₴';
+
+      if (val === 'custom') {
+        if (customAmountWrapper) customAmountWrapper.style.display = 'block';
+        if (customCertInput) customCertInput.focus();
+        updateCertPriceDisplay('custom');
+      } else {
+        if (customAmountWrapper) customAmountWrapper.style.display = 'none';
+        updateCertPriceDisplay(val);
       }
     });
   });
+
+  if (customCertInput) {
+    customCertInput.addEventListener('input', () => {
+      const activeChip = document.querySelector('.chip-btn.active');
+      if (activeChip && activeChip.getAttribute('data-val') === 'custom') {
+        updateCertPriceDisplay('custom');
+      }
+    });
+
+    customCertInput.addEventListener('blur', () => {
+      const val = parseInt(customCertInput.value, 10);
+      if (!val || val < 1000) {
+        customCertInput.value = 1000;
+        updateCertPriceDisplay('custom');
+      }
+    });
+  }
 
   // 7. Modal Booking Drawer Controller
   const modalOverlay = document.getElementById('bookingModal');

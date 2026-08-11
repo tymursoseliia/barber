@@ -915,6 +915,66 @@ body {
   color: var(--gold-bright);
 }
 
+/* Custom Certificate Amount Input */
+.custom-amount-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1.6rem;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-amount-label {
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.custom-input-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 260px;
+  width: 100%;
+}
+
+.custom-cert-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1.1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 800;
+  outline: none;
+  transition: var(--transition);
+  -moz-appearance: textfield;
+}
+
+.custom-cert-input::-webkit-outer-spin-button,
+.custom-cert-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-cert-input:focus {
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 15px rgba(212, 194, 172, 0.35);
+}
+
+.currency-symbol {
+  position: absolute;
+  right: 1.1rem;
+  color: var(--gold-primary);
+  font-weight: 800;
+  font-size: 1.15rem;
+  pointer-events: none;
+}
+
 /* Contacts & Map Split */
 .contacts-split {
   display: grid;
