@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Only trigger horizontal peek if table is scrollable
           if (priceMatrix.scrollWidth > priceMatrix.clientWidth) {
             setTimeout(() => {
-              priceMatrix.scrollTo({ left: 115, behavior: 'smooth' });
+              priceMatrix.scrollTo({ left: 160, behavior: 'smooth' });
               setTimeout(() => {
                 priceMatrix.scrollTo({ left: 0, behavior: 'smooth' });
               }, 800);

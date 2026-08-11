@@ -1573,4 +1573,33 @@ body {
   .modal-card {
     padding: 1.5rem;
   }
+
+  /* Price Matrix Mobile Centering & Sticky Alignment */
+  .price-card-matrix {
+    scroll-padding-left: 175px;
+  }
+
+  .matrix-table {
+    min-width: 600px;
+  }
+
+  .matrix-table th:first-child,
+  .matrix-table td:first-child {
+    width: 175px;
+    min-width: 175px;
+    max-width: 175px;
+    padding: 0.95rem 0.75rem;
+  }
+
+  .matrix-table th:nth-child(n+2),
+  .matrix-table td:nth-child(n+2) {
+    width: calc(100vw - 210px);
+    min-width: 135px;
+    padding: 0.95rem 0.5rem;
+    text-align: center !important;
+  }
+
+  .matrix-table th {
+    text-align: center !important;
+  }
 }
