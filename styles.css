@@ -482,19 +482,20 @@ body {
   margin-top: 3.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
+  gap: 1rem;
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.25rem 1.4rem;
 }
 
 .highlight-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
   text-align: left;
+  min-width: 0;
 }
 
 .highlight-icon {
@@ -511,17 +512,24 @@ body {
   flex-shrink: 0;
 }
 
+.highlight-text {
+  min-width: 0;
+}
+
 .highlight-text h4 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
-  white-space: nowrap;
+  line-height: 1.25;
+  white-space: normal;
+  word-break: keep-all;
 }
 
 .highlight-text p {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  white-space: nowrap;
+  line-height: 1.3;
+  white-space: normal;
 }
 
 /* Marquee Ticker */
@@ -1345,9 +1353,10 @@ body {
    RESPONSIVE BREAKPOINTS & MOBILE OPTIMIZATIONS
    ========================================================================== */
 
-@media (max-width: 1100px) {
+@media (max-width: 1240px) {
   .highlights-bar {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
   }
 }
 
